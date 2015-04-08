@@ -10,7 +10,6 @@
 
 ## Summary
 
-Remember our old friend **Orange Trees** from Ruby? Let's revisit it in
 JavaScript.  While this assignment might look _superficially_ easy you can make
 this a very powerful and elegant program and unify the lessons of [The
 Prophetess Metz's][metz] scrolls *as well* what you know about how to write
