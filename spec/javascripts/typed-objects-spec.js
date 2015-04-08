@@ -1,7 +1,7 @@
 // Here is your first test rewritten to expect a constructor function.
 
 describe ("Tree", function(){
-  xit("should return a tree object", function(){
+  it("should return a tree object", function(){
     var tree= new Tree()
     expect(tree).toBeDefined();
   });
