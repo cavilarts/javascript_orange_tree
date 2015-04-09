@@ -13,6 +13,8 @@ var View = function() {
 
 View.prototype = {
 	renderTree: function(){
-	  $("#orange-tree-template").css({'display':'block'})
+	  $("#orange-tree-template").css({'display':'block'});
+	  $("#tree").removeClass("display-tree-big");
+	  $("#tree").addClass("display-tree-small");
 	}
 };
