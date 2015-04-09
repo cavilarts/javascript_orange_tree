@@ -1,14 +1,5 @@
 /* Write your JS to modify the view here */
-
-// $(document).ready(function(){
-// 	$(".plant").click(function(){
-// 		$("#orange-tree-template").css({'display':'block'})
-// 	});
-// });
-
-
 var View = function() {
-	
 }
 
 View.prototype = {
@@ -24,5 +15,11 @@ View.prototype = {
   deadTree: function(){
     $("#orange-tree-template").css({'display':'none'});
     alert("Your tree is dead")    
+  },
+  createOrange: function(diameter){
+    var posx = (Math.random() * ($(".orange").width() - diameter)).toFixed();
+    var posy = (Math.random() * ($(".orange").height() - diameter)).toFixed();
+    var modifyOrange = "<img src='images/orange.gif' style='width:"+diameter+"px; position:absolute; left:"+posx+"px; top:"+posy+"px'>";
+    $(".orange").append(modifyOrange)
   }
 };

@@ -7,12 +7,13 @@ var Tree = function() {
 	this.age = 0;
 	this.height = 0;
 	this.orangeArray = [];
-	this.orangeCount = 0
+	this.orangeCount = 0;
 	this.isAlive = true;
+	this.newOranges = 0;
 }
 
 var Orange = function() {
-	this.diameter = Math.floor((Math.random() * 3) + 1)
+	this.diameter = Math.floor((Math.random() * 50) + 10)
 }
 
 function createTree(){
@@ -33,7 +34,8 @@ Tree.prototype = {
 		this.age ++;
 		this.height +=10;
 		if(this.age >= FRUIT_BEARING_AGE){
-			for(counter = 1; counter <= Math.floor((Math.random() * 20) + 1); counter ++) {
+			this.newOranges = Math.floor((Math.random() * 20) + 1);
+			for(counter = 1; counter <= this.newOranges; counter ++) {
 				this.orangeArray.push(createOrange());
 			}
 		}
