@@ -1,6 +1,6 @@
 /* Write your code for the plain-old-js-objects-spec here */
-var FRUIT_BEARING_AGE = 1
-var MAX_AGE = 20
+var FRUIT_BEARING_AGE = 2
+var MAX_AGE = 10
 
 
 var Tree = function() {
@@ -23,10 +23,8 @@ function createOrange(){
 	return new Orange
 }
 
-function pickOrange() {
-		console.log(this)
-		var pickedOrange = createOrange();
-		return pickedOrange;
+function pickOrange(tree) {
+		return tree.orangeArray.shift();
 }
 
 
@@ -51,12 +49,6 @@ Tree.prototype = {
 		var droppedOrange = this.orangeCount --;
 		return droppedOrange
 	},
-	// pickOrange: function() {
-	// 	// var pickOrange = this.orangeArray.shift();
-	// 	var pickedOrange = this.orangeArray[0];
-	// 	return pickedOrange;
-	// }
-
 };
 
 
