@@ -21,5 +21,8 @@ View.prototype = {
     var posy = (Math.random() * ($(".orange").height() - diameter)).toFixed();
     var modifyOrange = "<img src='images/orange.gif' style='width:"+diameter+"px; position:absolute; left:"+posx+"px; top:"+posy+"px'>";
     $(".orange").append(modifyOrange)
+  },
+  pickOrange: function(){
+    $(".orange").children().first().remove()
   }
 };
