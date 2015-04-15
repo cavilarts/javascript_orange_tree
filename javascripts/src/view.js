@@ -5,19 +5,25 @@ $( document ).ready(function( $ ) {
   $( ".plant" ).click(function() {
    // console.log("fuck");
    $('#orange-tree-template').css('display','block');
-   nielsTree = new OrangeTree;
-   console.log(nielsTree)
+   neilmanTree = new OrangeTree;
+   console.log(neilmanTree)
 
  });
 
   $("button.age").click(function() {
-    nielsTree.grow();
-     console.log(nielsTree.age);
-  if (nielsTree.isAlive) {
-  $("p.age").text(nielsTree.age);
-  console.log(nielsTree.isAlive)
-}
+    neilmanTree.grow();
+  if (neilmanTree.isAlive) {
+  $("p.age").text(neilmanTree.age);
+  $("p.fruit-count").text(neilmanTree.orangeCount)
+  }
   })
+
+  $("button.pick").click(function() {
+     neilmanTree.pickOrange();
+     $("p.fruit-count").text(neilmanTree.orangeCount)
+
+
+  });
 
 
 });

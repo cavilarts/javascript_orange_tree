@@ -16,7 +16,7 @@ OrangeTree.prototype = {
     if (this.isAlive) {
     this.age += AGING_RATE;
     this.height += SIZING_RATE;
-    if( this.age == FRUIT_BEARING_AGE ){
+    if( this.age >= FRUIT_BEARING_AGE ){
       this.orangeCount = Math.ceil(Math.random() * 20);
     };
     if (this.age <= MAX_AGE ){ this.isAlive = true }
@@ -30,10 +30,10 @@ OrangeTree.prototype = {
     return droppedOrange;
   },
   pickOrange: function(){
-
-    return new orange;
+    if(this.orangeCount > 0) {
+    this.orangeCount == this.orangeCount --;
+    };
   }
-
 }
 
 console.log("hellow German")
