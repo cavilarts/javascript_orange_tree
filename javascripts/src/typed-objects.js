@@ -13,31 +13,33 @@ var OrangeTree = function(){
 };
 OrangeTree.prototype = {
   grow: function(){
+    if (this.isAlive) {
     this.age += AGING_RATE;
     this.height += SIZING_RATE;
     if( this.age == FRUIT_BEARING_AGE ){
-      this.orangeCount = random(20);
+      this.orangeCount = Math.ceil(Math.random() * 20);
     };
-    if (this.age <= MAX_AGE){
-      this.isAlive = true;
-    }else{
-      this.isAlive = false;
-    }
+    if (this.age <= MAX_AGE ){ this.isAlive = true }
+    else { this.isAlive = false }
+  } else {
+    console.log("DEAD");
+  }
   },
   dropOrange: function(){
     var droppedOrange = this.orangeCount --;
     return droppedOrange;
   },
   pickOrange: function(){
+
     return new orange;
-  },
-  random: function(number){
-    return (Math.ceil(Math.random() * number))
   }
+
 }
-var germanOrangeTree = new OrangeTree();
-console.log(germanOrangeTree.age);
-germanOrangeTree.grow();
-germanOrangeTree.grow();
-germanOrangeTree.grow();
-console.log(germanOrangeTree.orangeCount);
+
+console.log("hellow German")
+// var germanOrangeTree = new OrangeTree();
+// console.log(germanOrangeTree.age);
+// germanOrangeTree.grow();
+// germanOrangeTree.grow();
+// germanOrangeTree.grow();
+// console.log(germanOrangeTree.orangeCount);
