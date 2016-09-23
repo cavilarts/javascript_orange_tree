@@ -12,6 +12,9 @@ Controller.prototype = {
   grow_listener: function () {
     document.querySelector('button.age').addEventListener('click', this.ageTree.bind(this))
   },
+  orangePickListener: function(orange) {
+    orange.addEventListener('click', this.pickOrange.bind(this))
+  },
   ageTree: function () {
     this.model.grow();
     if (this.model.age > FRUIT_BEARING_AGE) {
@@ -23,7 +26,8 @@ Controller.prototype = {
   growOranges: function () {
     for (var i=this.view.howManyRenderedOranges(); i<this.model.orangeArr.length; i++){
         var diameter = this.model.orangeArr[i].diameter;
-        this.view.renderOrange(diameter);
+        var orange = this.view.renderOrange(diameter);
+        this.orangePickListener(orange)
     }
   },
   dropOranges: function () {
@@ -32,6 +36,10 @@ Controller.prototype = {
       this.model.dropOrange();
       this.view.dropOrange();
     }
+  },
+  pickOrange: function(event) {
+    this.model.pickOrange()
+    this.view.pickOrange(event.target)
   }
 }
 

@@ -39,12 +39,15 @@ View.prototype = {
       img.style.top = (Math.ceil(Math.random() * 400)+120) + "px";
       img.style.left = (Math.ceil(Math.random() * 700)+100) + "px";
       this.tree.appendChild(img)
+      return img
     },
   dropOrange: function(){
-    console.log(document.querySelectorAll('.alive'))
     var orange = document.querySelectorAll('.alive')[0];
     orange.className = "orange dead"
     orange.style.top = "750px";
-    }
+  },
+  pickOrange: function(orange){
+    orange.style.display = 'none'
   }
+}
 
